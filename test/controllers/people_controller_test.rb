@@ -6,12 +6,12 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get people_url
+    get position_people_url(positions(:one))
     assert_response :success
   end
 
   test "should get new" do
-    get new_person_url
+    get new_position_person_url(positions(:one))
     assert_response :success
   end
 
