@@ -5,17 +5,13 @@
 
   <% content_for :title, "People" %>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">People</h1>
-    <%= link_to "New person", new_position_person_path(@position), class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
-
   <div id="people" class="min-w-full">
-    <% @people.each do |person| %>
-      <%= render person %>
-      <p>
-        <%= link_to "Show this person", person, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
-    <% end %>
+    <h2 class="text-l border-b-2 border-gray-500 p-2"><%= params[:stage]&.humanize %></h2>
+    <div class="flex-1 p-2 space-y-2">
+      <%= link_to "New person", new_position_person_path(@position, stage: params[:stage]), class: "rounded-lg py-3 px-5 bg-gray-600 text-white block font-medium text-center" %>
+      <% @people.each do |person| %>
+        <%= render person %>
+      <% end %>
+    </div>
   </div>
 </div>
