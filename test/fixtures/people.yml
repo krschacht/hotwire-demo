@@ -2,7 +2,7 @@
 
 one:
   position: one
-  stage: MyString
+  stage: interviewed
   first_name: MyString
   last_name: MyString
   email: MyString
@@ -10,7 +10,7 @@ one:
 
 two:
   position: two
-  stage: MyString
+  stage: applied
   first_name: MyString
   last_name: MyString
   email: MyString

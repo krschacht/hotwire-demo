@@ -1,9 +1,11 @@
 class PeopleController < ApplicationController
+  before_action :set_position, only: %i[ index new ]
   before_action :set_person, only: %i[ show edit update destroy ]
 
   # GET /people
   def index
-    @people = Person.all
+    @people = @position.people
+    @people = @people.where(stage: params[:stage]) if params[:stage]
   end
 
   # GET /people/1
@@ -12,7 +14,7 @@ class PeopleController < ApplicationController
 
   # GET /people/new
   def new
-    @person = Person.new
+    @person = @position.people.new(stage: params[:stage])
   end
 
   # GET /people/1/edit
@@ -47,6 +49,10 @@ class PeopleController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_position
+      @position = Position.find(params[:position_id])
+    end
+
     def set_person
       @person = Person.find(params[:id])
     end
