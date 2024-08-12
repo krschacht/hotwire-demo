@@ -1,12 +1,12 @@
 <div class="w-full flex bg-green-100">
-  <div class="w-0 sm:w-60 bg-red-100"></div>
+  <turbo-frame id="left_column" class="w-0 sm:w-60 bg-red-100" src="<%= positions_path %>" refresh="morph">Loading...</turbo-frame>
 
-  <div class="flex-1 bg-blue-200 pl-0 sm:pl-3">
+  <turbo-frame id="right_column" class="flex-1 bg-blue-200 pl-0 sm:pl-3" refresh="morph">
     <div class="h-20 flex items-center">
       <div class="inline-block flex-1 text-xl"><%= @position.title %></div>
-      <%= link_to "Edit", edit_position_path(@position), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to "Edit", edit_position_path(@position), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium", data: { turbo_action: "replace" } %>
     </div>
 
     <%= render @position %>
-  </div>
+  </turbo-frame>
 </div>
