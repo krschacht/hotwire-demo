@@ -4,7 +4,7 @@ class PeopleController < ApplicationController
 
   # GET /people
   def index
-    @people = @position.people
+    @people = @position.people.order(:updated_at)
     @people = @people.where(stage: params[:stage]) if params[:stage]
   end
 

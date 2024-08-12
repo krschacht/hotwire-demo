@@ -18,8 +18,7 @@
 
   <div class="my-5">
     <%= form.label :stage %>
-    (<%= Person.stages.keys.to_sentence %>)
-    <%= form.text_field :stage, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :stage, Person.stages.keys, {}, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
@@ -43,6 +42,7 @@
   </div>
 
   <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit "Save", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= link_to "Cancel", person, class: "rounded-lg py-3 px-5 inline-block font-medium cursor-pointer bg-white border-2 border-gray-300" %>
   </div>
 <% end %>

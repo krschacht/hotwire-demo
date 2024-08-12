@@ -1,7 +1,6 @@
-<div id="<%= dom_id position %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
-    <%= position.title %>
-  </p>
-
+<div id="<%= dom_id position %>" class="flex space-x-4">
+  <% Person.stages.keys.each do |stage| %>
+    <div id="<%= stage %>-column" class="flex-1 border-2 border-gray-500 flex flex-col min-h-20">
+    </div>
+  <% end %>
 </div>
