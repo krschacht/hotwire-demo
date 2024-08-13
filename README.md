@@ -19,7 +19,10 @@ bin/rails db:migrate
 # Update views
 
 # Wire up turbo-frames for positions
+# Wire up turbo-frames for people
 
+bin/rails generate stimulus draggable
+bin/rails generate stimulus dropzone
 
 
 PWA configuration

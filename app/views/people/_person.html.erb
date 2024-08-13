@@ -1,4 +1,9 @@
-<turbo-frame id="<%= dom_id person %>" class="bg-green-300 p-3 rounded-md flex">
+<turbo-frame
+  id="<%= dom_id person %>"
+  class="bg-green-300 p-3 rounded-md flex"
+  draggable="true"
+  data-controller="draggable"
+>
   <div class="flex-1">
     <div class="font-bold">
       <%= person.first_name %> <%= person.last_name %>
@@ -17,4 +22,16 @@
   <div class="flex-none">
     <%= link_to "Edit", edit_person_path(person), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
+
+  <%= button_to "Move", person,
+    method: :patch,
+    params: { person: { stage: person.stage } },
+    form: {
+      class: "hidden",
+      id: "move_#{dom_id person}",
+      data: {
+        turbo_frame: "_top",
+        draggable_target: "form"
+      }
+    } %>
 </turbo-frame>
