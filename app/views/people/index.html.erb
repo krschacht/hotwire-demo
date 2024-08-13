@@ -9,6 +9,10 @@
     <h2 class="text-l border-b-2 border-gray-500 p-2"><%= params[:stage]&.humanize %></h2>
     <div
       class="flex-1 p-2 space-y-2"
+      data-controller="dropzone"
+      data-dropzone-target="dropzone"
+      data-dropzone-hover-class="bg-blue-300"
+      data-dropzone-stage-value="<%= params[:stage] %>"
     >
       <turbo-frame id="new_person_<%= params[:stage] %>">
         <%= link_to "New person", new_position_person_path(@position, stage: params[:stage]), class: "rounded-lg py-3 px-5 bg-gray-600 text-white block font-medium text-center" %>
