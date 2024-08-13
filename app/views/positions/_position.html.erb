@@ -1,6 +1,9 @@
 <div id="<%= dom_id position %>" class="flex space-x-4">
   <% Person.stages.keys.each do |stage| %>
     <div id="<%= stage %>-column" class="flex-1 border-2 border-gray-500 flex flex-col min-h-20">
+      <turbo-frame id="column" src="<%= position_people_path(position, stage: stage) %>" refresh="morph" class="flex flex-col h-full">
+        Loading...
+      </turbo-frame>
     </div>
   <% end %>
 </div>

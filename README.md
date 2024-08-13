@@ -9,7 +9,7 @@ bin/rails generate solid_queue:install
 # add the config line to development.rb
 # configure actioncable
 bin/rails generate scaffold Position title:string
-bin/rails generate scaffold Person position:references stage:string first_name:string last_name:string email:string note:text like_count:integer
+bin/rails generate scaffold Person position:references stage:string first_name:string last_name:string email:string note:text
 bin/rails db:create
 bin/rails db:migrate
 # update routes.rb for root

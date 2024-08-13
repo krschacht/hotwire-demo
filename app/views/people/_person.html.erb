@@ -1,4 +1,4 @@
-<div id="<%= dom_id person %>" class="bg-green-300 p-3 rounded-md flex">
+<turbo-frame id="<%= dom_id person %>" class="bg-green-300 p-3 rounded-md flex">
   <div class="flex-1">
     <div class="font-bold">
       <%= person.first_name %> <%= person.last_name %>
@@ -17,4 +17,4 @@
   <div class="flex-none">
     <%= link_to "Edit", edit_person_path(person), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
-</div>
+</turbo-frame>
