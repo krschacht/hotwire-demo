@@ -1,5 +1,5 @@
-<div class="w-full flex bg-green-100">
-  <turbo-frame id="left_column" class="w-full sm:w-60 bg-red-100" refresh="morph">
+<div class="w-full flex">
+  <turbo-frame id="left_column" class="w-full sm:w-60" refresh="morph">
     <%= link_to "New position", new_position_path, class: "rounded-lg p-2 bg-blue-600 text-white block font-medium text-center mb-8", data: { turbo_frame: "right_column", turbo_action: "advance" } %>
 
     <ul id="positions" class="space-y-4">
@@ -10,5 +10,5 @@
     </ul>
   </turbo-frame>
 
-  <turbo-frame id="right_column" class="flex-1 bg-blue-200 pl-0 sm:pl-3" refresh="morph"></turbo-frame>
+  <turbo-frame id="right_column" class="flex-1 pl-0 sm:pl-3" refresh="morph"></turbo-frame>
 </div>
