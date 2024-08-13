@@ -5,13 +5,15 @@
 
   <% content_for :title, "People" %>
 
-  <div id="people" class="min-w-full">
+  <turbo-frame id="column" class="min-w-full" refresh="morph">
     <h2 class="text-l border-b-2 border-gray-500 p-2"><%= params[:stage]&.humanize %></h2>
     <div class="flex-1 p-2 space-y-2">
-      <%= link_to "New person", new_position_person_path(@position, stage: params[:stage]), class: "rounded-lg py-3 px-5 bg-gray-600 text-white block font-medium text-center" %>
+      <turbo-frame id="new_person_<%= params[:stage] %>">
+        <%= link_to "New person", new_position_person_path(@position, stage: params[:stage]), class: "rounded-lg py-3 px-5 bg-gray-600 text-white block font-medium text-center" %>
+      </turbo-frame>
       <% @people.each do |person| %>
         <%= render person %>
       <% end %>
-    </div>
+    </turbo-frame>
   </div>
 </div>

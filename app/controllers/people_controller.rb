@@ -26,7 +26,7 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
 
     if @person.save
-      redirect_to @person, notice: "Person was successfully created."
+      redirect_to position_path(@person.position), notice: "Person was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class PeopleController < ApplicationController
   # PATCH/PUT /people/1
   def update
     if @person.update(person_params)
-      redirect_to @person, notice: "Person was successfully updated.", status: :see_other
+      redirect_to position_path(@person.position), notice: "Person was successfully updated.", status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
