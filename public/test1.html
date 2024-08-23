@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Frame</title>
-    <script src="http://localhost:9000/dist/turbo.es2017-umd.js" data-turbo-track="reload"></script>
-    <script src="http://localhost:9000/src/tests/fixtures/test.js"></script>
+    <script src="/turbo.js" data-turbo-track="reload"></script>
+    <script src="/test.js"></script>
     <script>
       addEventListener("click", ({ target }) => {
         if (target.id == "add-turbo-action-to-frame") {
@@ -60,7 +60,7 @@
 
     </turbo-frame>
 
-    <a href="/test2.html" data-turbo-frame="frame" data-turbo-action="advance">Load #frame v2</a>
+    <a href="/test2.html" data-turbo-frame="frame" data-turbo-action="advance" style="background-color: yellow;">Load #frame to test for back-button bug</a>
 
     <a id="link-hello-advance" href="/src/tests/fixtures/frames/hello.html" data-turbo-frame="hello" data-turbo-action="advance">advance #hello</a>
 
