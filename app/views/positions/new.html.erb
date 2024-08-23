@@ -1,8 +1,0 @@
-<div class="w-full flex">
-  <turbo-frame id="left_column" class="w-0 sm:w-60" src="<%= positions_path %>" refresh="morph" loading="lazy">Loading...</turbo-frame>
-
-  <turbo-frame id="right_column" class="flex-1 pl-0 sm:pl-3" refresh="morph">
-    <h1 class="text-xl">New position</h1>
-    <%= render "form", position: @position %>
-  </turbo-frame>
-</div>
